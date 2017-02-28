@@ -1,0 +1,353 @@
+{
+    "accessors": {
+        "accessor_buffer_Plane_0": {
+            "bufferView": "bufferView_buffer_Plane_0",
+            "byteOffset": 0,
+            "byteStride": 24,
+            "componentType": 5126,
+            "count": 4,
+            "max": [
+                7.987037181854248,
+                8.01080322265625,
+                0
+            ],
+            "min": [
+                -8.011363983154297,
+                -8.00265121459961,
+                0.0
+            ],
+            "type": "VEC3"
+        },
+        "accessor_buffer_Plane_1": {
+            "bufferView": "bufferView_buffer_Plane_0",
+            "byteOffset": 12,
+            "byteStride": 24,
+            "componentType": 5126,
+            "count": 4,
+            "max": [
+                0,
+                0,
+                1.0
+            ],
+            "min": [
+                0.0,
+                0.0,
+                1.0
+            ],
+            "type": "VEC3"
+        },
+        "accessor_buffer_Plane_2": {
+            "bufferView": "bufferView_buffer_Plane_1",
+            "byteOffset": 0,
+            "byteStride": 2,
+            "componentType": 5123,
+            "count": 6,
+            "max": [
+                3
+            ],
+            "min": [
+                0
+            ],
+            "type": "SCALAR"
+        }
+    },
+    "asset": {
+        "profile": {
+            "api": "WebGL",
+            "version": "1.0.3"
+        },
+        "version": "1.0"
+    },
+    "bufferViews": {
+        "bufferView_buffer_Plane_0": {
+            "buffer": "buffer_combined",
+            "byteLength": 96,
+            "byteOffset": 0,
+            "target": 34962
+        },
+        "bufferView_buffer_Plane_1": {
+            "buffer": "buffer_combined",
+            "byteLength": 12,
+            "byteOffset": 96,
+            "target": 34963
+        }
+    },
+    "buffers": {
+        "buffer_combined": {
+            "byteLength": 108,
+            "type": "arraybuffer",
+            "uri": "data:text/plain;base64,z5X/QNwKAMEAAAAAAAAAAAAAAAAAAIA/jC4AwUAsAEEAAAAAAAAAAAAAAAAAAIA/jC4AwdwKAMEAAAAAAAAAAAAAAAAAAIA/z5X/QEAsAEEAAAAAAAAAAAAAAAAAAIA/AQACAAAAAQAAAAMA"
+        }
+    },
+    "materials": {
+        "material_Material": {
+            "technique": "technique_Material",
+            "values": {
+                "diffuse_color": [
+                    0.8000000715255737,
+                    0.20403417944908142,
+                    0.15577974915504456
+                ],
+                "diffuse_intensity": 0.800000011920929,
+                "specular_color": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "specular_hardness": 50,
+                "specular_intensity": 0.5
+            }
+        }
+    },
+    "meshes": {
+        "mesh_Plane": {
+            "name": "Plane",
+            "primitives": [
+                {
+                    "attributes": {
+                        "NORMAL": "accessor_buffer_Plane_1",
+                        "POSITION": "accessor_buffer_Plane_0"
+                    },
+                    "indices": "accessor_buffer_Plane_2",
+                    "material": "material_Material",
+                    "mode": 4
+                }
+            ]
+        }
+    },
+    "nodes": {
+        "node_Plane": {
+            "children": [],
+            "matrix": [
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "meshes": [
+                "mesh_Plane"
+            ],
+            "name": "Plane"
+        },
+        "node_scene_Scene_root": {
+            "children": [
+                "node_Plane"
+            ],
+            "matrix": [
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                -1.0,
+                0.0,
+                0.0,
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "name": "node_scene_Scene_root"
+        }
+    },
+    "programs": {
+        "program_Material": {
+            "attributes": [
+                "bl_Vertex",
+                "bl_Normal"
+            ],
+            "fragmentShader": "shader_Material_FS",
+            "vertexShader": "shader_Material_VS"
+        }
+    },
+    "samplers": {
+        "sampler_default": {}
+    },
+    "scene": "scene_Scene",
+    "scenes": {
+        "scene_Scene": {
+            "extras": {
+                "active_camera": "camera_Camera",
+                "background_color": [
+                    0.05087608844041824,
+                    0.05087608844041824,
+                    0.05087608844041824
+                ],
+                "frames_per_second": 24
+            },
+            "name": "Scene",
+            "nodes": [
+                "node_scene_Scene_root"
+            ]
+        }
+    },
+    "shaders": {
+        "shader_Material_FS": {
+            "type": 35632,
+            "uri": "MaterialFS.glsl"
+        },
+        "shader_Material_VS": {
+            "type": 35633,
+            "uri": "MaterialVS.glsl"
+        }
+    },
+    "techniques": {
+        "technique_Material": {
+            "attributes": {
+                "bl_Normal": "bl_Normal",
+                "bl_Vertex": "bl_Vertex"
+            },
+            "parameters": {
+                "Lamp_color": {
+                    "type": 35665,
+                    "value": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                },
+                "Lamp_dynpersmat": {
+                    "node": "node_Lamp",
+                    "semantic": "BL_DYNPERSMAT",
+                    "type": 35676
+                },
+                "Lamp_dynvec": {
+                    "node": "node_Lamp",
+                    "semantic": "BL_DYNVEC",
+                    "type": 35665
+                },
+                "Lamp_energy": {
+                    "type": 5126,
+                    "value": 1.0
+                },
+                "ambient_color": {
+                    "type": 35666,
+                    "value": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ]
+                },
+                "bl_ModelViewMatrix": {
+                    "semantic": "MODELVIEW",
+                    "type": 35676
+                },
+                "bl_Normal": {
+                    "semantic": "NORMAL",
+                    "type": 35665
+                },
+                "bl_NormalMatrix": {
+                    "semantic": "MODELVIEWINVERSETRANSPOSE",
+                    "type": 35675
+                },
+                "bl_ProjectionMatrix": {
+                    "semantic": "PROJECTION",
+                    "type": 35676
+                },
+                "bl_Vertex": {
+                    "semantic": "POSITION",
+                    "type": 35666
+                },
+                "diffuse_color": {
+                    "type": 35665,
+                    "value": [
+                        0.8000000715255737,
+                        0.20403417944908142,
+                        0.15577974915504456
+                    ]
+                },
+                "diffuse_intensity": {
+                    "type": 5126,
+                    "value": 0.800000011920929
+                },
+                "mist_color": {
+                    "type": 35666,
+                    "value": [
+                        0.05087608844041824,
+                        0.05087608844041824,
+                        0.05087608844041824
+                    ]
+                },
+                "mist_depth": {
+                    "type": 5126,
+                    "value": 25.0
+                },
+                "mist_falloff": {
+                    "type": 5126,
+                    "value": 0.0
+                },
+                "mist_intensity": {
+                    "type": 5126,
+                    "value": 0.0
+                },
+                "mist_start": {
+                    "type": 5126,
+                    "value": 5.0
+                },
+                "mist_use_mist": {
+                    "type": 5126,
+                    "value": false
+                },
+                "samp0": {
+                    "type": 5124,
+                    "value": null
+                },
+                "specular_color": {
+                    "type": 35665,
+                    "value": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                },
+                "specular_hardness": {
+                    "type": 5126,
+                    "value": 50
+                },
+                "specular_intensity": {
+                    "type": 5126,
+                    "value": 0.5
+                }
+            },
+            "program": "program_Material",
+            "uniforms": {
+                "bl_ModelViewMatrix": "bl_ModelViewMatrix",
+                "bl_NormalMatrix": "bl_NormalMatrix",
+                "bl_ProjectionMatrix": "bl_ProjectionMatrix",
+                "samp0": "samp0",
+                "unf1": "diffuse_color",
+                "unf18": "diffuse_intensity",
+                "unf20": "Lamp_energy",
+                "unf21": "Lamp_color",
+                "unf25": "Lamp_dynpersmat",
+                "unf47": "specular_hardness",
+                "unf50": "specular_intensity",
+                "unf56": "specular_color",
+                "unf67": "ambient_color",
+                "unf76": "mist_use_mist",
+                "unf77": "mist_start",
+                "unf78": "mist_depth",
+                "unf79": "mist_falloff",
+                "unf80": "mist_intensity",
+                "unf84": "mist_color",
+                "unf9": "Lamp_dynvec"
+            }
+        }
+    }
+}
